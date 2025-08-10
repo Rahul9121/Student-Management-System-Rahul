@@ -109,6 +109,13 @@ def test_db():
     except:
         return 'Something went wrong'
 
+@app.route('/test_nav')
+def test_nav():
+    """Test route to check navigation"""
+    return '''<h1>Navigation Test Successful!</h1>
+              <p>If you can see this page, the navigation is working.</p>
+              <p><a href="/">← Back to Home</a></p>'''
+
 @app.route('/init_db')
 def init_database_route():
     """Initialize the database with comprehensive sample data"""

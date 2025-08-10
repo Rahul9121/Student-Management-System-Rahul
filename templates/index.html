@@ -1,13 +1,23 @@
-{% extends 'base.html' %}
-{% block content %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
   <!-- Small corner init button -->
   <div class="init-button-corner">
     <a href="/init_db" class="init-btn" title="Initialize Database with Sample Data">⚡</a>
   </div>
   
   <h1 class="welcome-heading">Student Management System</h1>
+  
+  <!-- Temporary test button -->
+  <div style="text-align: center; margin: 20px;">
+    <a href="/test_nav" style="background: #ff4444; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">🔧 Test Navigation</a>
+  </div>
   
   <div class="menu-container">
     <div class="menu-item students">
@@ -35,7 +45,8 @@
       </a>
     </div>
   </div>
-{% endblock %}
+</body>
+</html>
 
 
 
