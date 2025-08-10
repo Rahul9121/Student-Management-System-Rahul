@@ -2,11 +2,18 @@
 {% block content %}
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <h1 class="welcome-heading">Welcome to the Student Management System</h1>
+  
+  <!-- Database Initialization Notice -->
+  <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 20px 0; border-radius: 8px; text-align: center;">
+    <p style="margin: 0; color: #856404;"><strong>📝 First Time Setup:</strong> If the system appears empty, initialize the database with sample data.</p>
+    <a href="/init_db" style="background: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; margin-top: 10px; display: inline-block;">🚀 Initialize Database</a>
+  </div>
+  
   <div class="menu-container">
-    <div class="menu-item"><a href="{{ url_for('students_all') }}">Students</a></div>
-    <div class="menu-item"><a href="{{ url_for('courses_all') }}">Courses</a></div>
-    <div class="menu-item"><a href="{{ url_for('instructors_all') }}">Instructors</a></div>
-    <div class="menu-item"><a href="{{ url_for('sections_all') }}">Sections</a></div>
+    <div class="menu-item"><a href="{{ url_for('students_all') }}">👥 Students</a></div>
+    <div class="menu-item"><a href="{{ url_for('courses_all') }}">📚 Courses</a></div>
+    <div class="menu-item"><a href="{{ url_for('instructors_all') }}">👨‍🏫 Instructors</a></div>
+    <div class="menu-item"><a href="{{ url_for('sections_all') }}">📝 Sections</a></div>
   </div>
 {% endblock %}
 

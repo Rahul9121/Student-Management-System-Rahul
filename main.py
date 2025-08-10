@@ -111,36 +111,68 @@ def test_db():
 
 @app.route('/init_db')
 def init_database_route():
-    """Initialize the database with sample data"""
+    """Initialize the database with comprehensive sample data"""
     try:
         # Clear existing data
         db.drop_all()
         db.create_all()
         
-        # Add sample students
+        # Add comprehensive student data
         students = [
-            Student(student_number=1001, name="Alice Johnson", dob=date(2000, 5, 15)),
-            Student(student_number=1002, name="Bob Smith", dob=date(2001, 8, 22)),
-            Student(student_number=1003, name="Carol Williams", dob=date(1999, 12, 10)),
-            Student(student_number=1004, name="David Brown", dob=date(2000, 3, 8)),
-            Student(student_number=1005, name="Eva Davis", dob=date(2001, 7, 25))
+            Student(student_number=2001, name="Emily Rodriguez", dob=date(2000, 3, 12)),
+            Student(student_number=2002, name="James Thompson", dob=date(1999, 9, 18)),
+            Student(student_number=2003, name="Sarah Kim", dob=date(2001, 1, 25)),
+            Student(student_number=2004, name="Michael O'Connor", dob=date(2000, 7, 8)),
+            Student(student_number=2005, name="Ashley Martinez", dob=date(1999, 11, 14)),
+            Student(student_number=2006, name="David Anderson", dob=date(2001, 5, 3)),
+            Student(student_number=2007, name="Jessica Wong", dob=date(2000, 12, 22)),
+            Student(student_number=2008, name="Christopher Lee", dob=date(1999, 4, 16)),
+            Student(student_number=2009, name="Amanda Taylor", dob=date(2001, 8, 30)),
+            Student(student_number=2010, name="Ryan Johnson", dob=date(2000, 6, 7)),
+            Student(student_number=2011, name="Lauren Brown", dob=date(1999, 10, 12)),
+            Student(student_number=2012, name="Kevin Chen", dob=date(2001, 2, 28)),
+            Student(student_number=2013, name="Natalie Davis", dob=date(2000, 9, 5)),
+            Student(student_number=2014, name="Brandon Wilson", dob=date(1999, 12, 1)),
+            Student(student_number=2015, name="Victoria Garcia", dob=date(2001, 4, 19))
         ]
         
-        # Add sample instructors
+        # Add diverse instructors
         instructors = [
             Instructor(instructor_name="Dr. Sarah Miller"),
             Instructor(instructor_name="Prof. John Wilson"),
             Instructor(instructor_name="Dr. Maria Garcia"),
-            Instructor(instructor_name="Prof. Michael Chen")
+            Instructor(instructor_name="Prof. Michael Chen"),
+            Instructor(instructor_name="Dr. Jennifer Adams"),
+            Instructor(instructor_name="Prof. Robert Taylor"),
+            Instructor(instructor_name="Dr. Lisa Thompson"),
+            Instructor(instructor_name="Prof. David Martinez"),
+            Instructor(instructor_name="Dr. Amy Johnson"),
+            Instructor(instructor_name="Prof. Mark Anderson")
         ]
         
-        # Add sample courses
+        # Add comprehensive course curriculum
         courses = [
+            # Computer Science Core
             Course(course_number=101, course_name="Introduction to Computer Science", credit_hours=3),
-            Course(course_number=102, course_name="Data Structures", credit_hours=4, prerequisite=101),
-            Course(course_number=201, course_name="Database Systems", credit_hours=3, prerequisite=102),
-            Course(course_number=301, course_name="Software Engineering", credit_hours=4, prerequisite=201),
-            Course(course_number=202, course_name="Web Development", credit_hours=3, prerequisite=101)
+            Course(course_number=102, course_name="Programming Fundamentals", credit_hours=4),
+            Course(course_number=201, course_name="Data Structures and Algorithms", credit_hours=4, prerequisite=102),
+            Course(course_number=202, course_name="Computer Systems Architecture", credit_hours=3, prerequisite=101),
+            Course(course_number=301, course_name="Database Systems", credit_hours=3, prerequisite=201),
+            Course(course_number=302, course_name="Software Engineering", credit_hours=4, prerequisite=201),
+            Course(course_number=401, course_name="Advanced Algorithms", credit_hours=3, prerequisite=301),
+            Course(course_number=402, course_name="Machine Learning", credit_hours=4, prerequisite=301),
+            
+            # Mathematics
+            Course(course_number=111, course_name="Calculus I", credit_hours=4),
+            Course(course_number=112, course_name="Calculus II", credit_hours=4, prerequisite=111),
+            Course(course_number=211, course_name="Linear Algebra", credit_hours=3, prerequisite=111),
+            Course(course_number=311, course_name="Statistics and Probability", credit_hours=3, prerequisite=112),
+            
+            # Specialized Courses
+            Course(course_number=351, course_name="Web Development", credit_hours=3, prerequisite=102),
+            Course(course_number=352, course_name="Mobile App Development", credit_hours=3, prerequisite=201),
+            Course(course_number=451, course_name="Cybersecurity Fundamentals", credit_hours=3, prerequisite=302),
+            Course(course_number=452, course_name="Cloud Computing", credit_hours=3, prerequisite=301)
         ]
         
         # Add all records to the session
@@ -154,38 +186,130 @@ def init_database_route():
         # Commit the basic data first
         db.session.commit()
         
-        # Add sample sections
+        # Add comprehensive sections for Fall 2024 and Spring 2025
         sections = [
+            # Fall 2024 sections
             Section(course_number=101, instructor_name="Dr. Sarah Miller", semester="Fall", year=2024),
-            Section(course_number=102, instructor_name="Prof. John Wilson", semester="Spring", year=2024),
+            Section(course_number=102, instructor_name="Prof. John Wilson", semester="Fall", year=2024),
             Section(course_number=201, instructor_name="Dr. Maria Garcia", semester="Fall", year=2024),
-            Section(course_number=301, instructor_name="Prof. Michael Chen", semester="Spring", year=2024),
-            Section(course_number=202, instructor_name="Dr. Sarah Miller", semester="Fall", year=2024)
+            Section(course_number=202, instructor_name="Prof. Michael Chen", semester="Fall", year=2024),
+            Section(course_number=301, instructor_name="Dr. Jennifer Adams", semester="Fall", year=2024),
+            Section(course_number=302, instructor_name="Prof. Robert Taylor", semester="Fall", year=2024),
+            Section(course_number=111, instructor_name="Dr. Lisa Thompson", semester="Fall", year=2024),
+            Section(course_number=112, instructor_name="Prof. David Martinez", semester="Fall", year=2024),
+            Section(course_number=351, instructor_name="Dr. Amy Johnson", semester="Fall", year=2024),
+            Section(course_number=451, instructor_name="Prof. Mark Anderson", semester="Fall", year=2024),
+            
+            # Spring 2025 sections
+            Section(course_number=101, instructor_name="Prof. John Wilson", semester="Spring", year=2025),
+            Section(course_number=102, instructor_name="Dr. Sarah Miller", semester="Spring", year=2025),
+            Section(course_number=201, instructor_name="Prof. Michael Chen", semester="Spring", year=2025),
+            Section(course_number=211, instructor_name="Dr. Lisa Thompson", semester="Spring", year=2025),
+            Section(course_number=311, instructor_name="Prof. David Martinez", semester="Spring", year=2025),
+            Section(course_number=352, instructor_name="Dr. Amy Johnson", semester="Spring", year=2025),
+            Section(course_number=401, instructor_name="Dr. Maria Garcia", semester="Spring", year=2025),
+            Section(course_number=402, instructor_name="Dr. Jennifer Adams", semester="Spring", year=2025),
+            Section(course_number=452, instructor_name="Prof. Mark Anderson", semester="Spring", year=2025)
         ]
         
         for section in sections:
             db.session.add(section)
         db.session.commit()
         
-        # Add sample enrollments
+        # Add realistic enrollments with varied grades
         enrollments = [
-            Enrollment(student_number=1001, section_identifier=1, grade="A"),
-            Enrollment(student_number=1001, section_identifier=2, grade="B+"),
-            Enrollment(student_number=1002, section_identifier=1, grade="B"),
-            Enrollment(student_number=1002, section_identifier=5, grade="A-"),
-            Enrollment(student_number=1003, section_identifier=2, grade="A"),
-            Enrollment(student_number=1003, section_identifier=3, grade="B+"),
-            Enrollment(student_number=1004, section_identifier=1, grade="B-"),
-            Enrollment(student_number=1005, section_identifier=5, grade="A")
+            # Student 2001 - Emily Rodriguez (Strong student)
+            Enrollment(student_number=2001, section_identifier=1, grade="A"),
+            Enrollment(student_number=2001, section_identifier=2, grade="A-"),
+            Enrollment(student_number=2001, section_identifier=7, grade="B+"),
+            Enrollment(student_number=2001, section_identifier=9, grade="A"),
+            
+            # Student 2002 - James Thompson
+            Enrollment(student_number=2002, section_identifier=1, grade="B+"),
+            Enrollment(student_number=2002, section_identifier=3, grade="B"),
+            Enrollment(student_number=2002, section_identifier=8, grade="B-"),
+            Enrollment(student_number=2002, section_identifier=10, grade="B+"),
+            
+            # Student 2003 - Sarah Kim (Excellent student)
+            Enrollment(student_number=2003, section_identifier=2, grade="A"),
+            Enrollment(student_number=2003, section_identifier=4, grade="A"),
+            Enrollment(student_number=2003, section_identifier=7, grade="A-"),
+            Enrollment(student_number=2003, section_identifier=11, grade="A"),
+            
+            # Student 2004 - Michael O'Connor
+            Enrollment(student_number=2004, section_identifier=1, grade="B"),
+            Enrollment(student_number=2004, section_identifier=2, grade="B+"),
+            Enrollment(student_number=2004, section_identifier=9, grade="A-"),
+            
+            # Student 2005 - Ashley Martinez
+            Enrollment(student_number=2005, section_identifier=3, grade="B-"),
+            Enrollment(student_number=2005, section_identifier=5, grade="C+"),
+            Enrollment(student_number=2005, section_identifier=8, grade="B"),
+            
+            # Student 2006 - David Anderson (Advanced student)
+            Enrollment(student_number=2006, section_identifier=5, grade="A"),
+            Enrollment(student_number=2006, section_identifier=6, grade="A-"),
+            Enrollment(student_number=2006, section_identifier=13, grade="B+"),
+            Enrollment(student_number=2006, section_identifier=17, grade="A"),
+            
+            # Student 2007 - Jessica Wong
+            Enrollment(student_number=2007, section_identifier=1, grade="A-"),
+            Enrollment(student_number=2007, section_identifier=7, grade="B+"),
+            Enrollment(student_number=2007, section_identifier=12, grade="A"),
+            
+            # Student 2008 - Christopher Lee
+            Enrollment(student_number=2008, section_identifier=2, grade="B"),
+            Enrollment(student_number=2008, section_identifier=4, grade="B-"),
+            Enrollment(student_number=2008, section_identifier=14, grade="B+"),
+            
+            # Student 2009 - Amanda Taylor
+            Enrollment(student_number=2009, section_identifier=3, grade="A-"),
+            Enrollment(student_number=2009, section_identifier=9, grade="B+"),
+            Enrollment(student_number=2009, section_identifier=16, grade="A"),
+            
+            # Student 2010 - Ryan Johnson
+            Enrollment(student_number=2010, section_identifier=6, grade="B+"),
+            Enrollment(student_number=2010, section_identifier=13, grade="B"),
+            Enrollment(student_number=2010, section_identifier=18, grade="B+"),
+            
+            # Additional enrollments for more students
+            Enrollment(student_number=2011, section_identifier=1, grade="B"),
+            Enrollment(student_number=2011, section_identifier=11, grade="B-"),
+            Enrollment(student_number=2012, section_identifier=2, grade="A"),
+            Enrollment(student_number=2012, section_identifier=15, grade="A-"),
+            Enrollment(student_number=2013, section_identifier=7, grade="B+"),
+            Enrollment(student_number=2013, section_identifier=19, grade="A"),
+            Enrollment(student_number=2014, section_identifier=4, grade="C+"),
+            Enrollment(student_number=2014, section_identifier=8, grade="B-"),
+            Enrollment(student_number=2015, section_identifier=5, grade="A-"),
+            Enrollment(student_number=2015, section_identifier=17, grade="B+")
         ]
         
         for enrollment in enrollments:
             db.session.add(enrollment)
         db.session.commit()
         
-        return f'Database initialized successfully!<br>Added {len(students)} students, {len(instructors)} instructors, {len(courses)} courses, {len(sections)} sections, and {len(enrollments)} enrollments.<br><br><a href="/">Go back to home</a>'
+        return f'''<h2>🎉 Database Successfully Initialized!</h2>
+        <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3>📊 Data Summary:</h3>
+            <ul style="font-size: 16px; line-height: 1.6;">
+                <li><strong>{len(students)} Students</strong> - Diverse student body with realistic names and birthdates</li>
+                <li><strong>{len(instructors)} Instructors</strong> - Faculty across multiple departments</li>
+                <li><strong>{len(courses)} Courses</strong> - Complete CS curriculum with prerequisites</li>
+                <li><strong>{len(sections)} Sections</strong> - Fall 2024 & Spring 2025 offerings</li>
+                <li><strong>{len(enrollments)} Enrollments</strong> - Realistic grade distributions</li>
+            </ul>
+        </div>
+        <div style="margin: 20px 0;">
+            <h3>🔗 Explore Your System:</h3>
+            <p><a href="/students/all" style="background: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin: 5px;">View All Students</a></p>
+            <p><a href="/courses/all" style="background: #28a745; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin: 5px;">View All Courses</a></p>
+            <p><a href="/instructors/all" style="background: #17a2b8; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin: 5px;">View All Instructors</a></p>
+            <p><a href="/sections/all" style="background: #ffc107; color: black; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin: 5px;">View All Sections</a></p>
+        </div>
+        <p><a href="/" style="background: #6c757d; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px;">← Back to Home</a></p>'''
     except Exception as e:
-        return f'Error initializing database: {str(e)}'
+        return f'<h2>❌ Error initializing database:</h2><p style="color: red; font-family: monospace;">{str(e)}</p><p><a href="/">Back to Home</a></p>'
 
 
 
