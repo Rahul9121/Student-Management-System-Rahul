@@ -40,6 +40,30 @@ h1.welcome-heading {
   letter-spacing: 1px;
 }
 
+/* First-time setup notice */
+.setup-notice {
+  max-width: 600px;
+  margin: -10px auto 30px auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 25px;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.setup-notice p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.setup-notice strong {
+  color: #333;
+}
+
 /* Corner initialization button */
 .init-button-corner {
   position: fixed;
@@ -285,6 +309,15 @@ tr:hover {
   .container {
     margin: 10px;
     padding: 20px;
+  }
+  
+  .setup-notice {
+    margin: -5px 20px 25px 20px;
+    padding: 12px 20px;
+  }
+  
+  .setup-notice p {
+    font-size: 0.9rem;
   }
 }
 
