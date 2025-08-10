@@ -1,19 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <h1 class="welcome-heading">Welcome to the Student Management System</h1>
   
-  <!-- Database Initialization Notice -->
-  <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 20px 0; border-radius: 8px; text-align: center;">
-    <p style="margin: 0; color: #856404;"><strong>📝 First Time Setup:</strong> If the system appears empty, initialize the database with sample data.</p>
-    <a href="/init_db" style="background: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; margin-top: 10px; display: inline-block;">🚀 Initialize Database</a>
+  <!-- Small corner init button -->
+  <div class="init-button-corner">
+    <a href="/init_db" class="init-btn" title="Initialize Database with Sample Data">⚡</a>
   </div>
   
+  <h1 class="welcome-heading">Student Management System</h1>
+  
   <div class="menu-container">
-    <div class="menu-item"><a href="{{ url_for('students_all') }}">👥 Students</a></div>
-    <div class="menu-item"><a href="{{ url_for('courses_all') }}">📚 Courses</a></div>
-    <div class="menu-item"><a href="{{ url_for('instructors_all') }}">👨‍🏫 Instructors</a></div>
-    <div class="menu-item"><a href="{{ url_for('sections_all') }}">📝 Sections</a></div>
+    <div class="menu-item students">
+      <a href="{{ url_for('students_all') }}">
+        <div class="menu-icon">👥</div>
+        <div class="menu-text">Students</div>
+      </a>
+    </div>
+    <div class="menu-item courses">
+      <a href="{{ url_for('courses_all') }}">
+        <div class="menu-icon">📚</div>
+        <div class="menu-text">Courses</div>
+      </a>
+    </div>
+    <div class="menu-item instructors">
+      <a href="{{ url_for('instructors_all') }}">
+        <div class="menu-icon">👨‍🏫</div>
+        <div class="menu-text">Instructors</div>
+      </a>
+    </div>
+    <div class="menu-item sections">
+      <a href="{{ url_for('sections_all') }}">
+        <div class="menu-icon">📝</div>
+        <div class="menu-text">Sections</div>
+      </a>
+    </div>
   </div>
 {% endblock %}
 

@@ -1,346 +1,341 @@
-body {
-  font-family: "Arial", sans-serif;
+/* Modern Student Management System Styles */
+
+* {
   margin: 0;
   padding: 0;
-  background-color: #f3e0e0; /* Light pink background */
-  color: #1a1a1a; /* Dark gray text color */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
   line-height: 1.6;
 }
 
+/* Container for content pages */
 .container {
-  max-width: 800px;
-  margin: 40px auto;
-  background-color: #fff;
+  max-width: 1000px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
-  border-radius: 15px; /* More rounded corners */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: #ff3d00; /* Vibrant orange */
-  margin-bottom: 20px;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  padding: 10px 0; /* Slightly larger padding */
-}
-
-a {
-  text-decoration: none;
-  color: #2196f3; /* Bright blue */
-  transition: color 0.3s ease;
-  border-bottom: 1px dotted transparent;
-}
-
-a:hover {
-  color: #e91e63; /* Vibrant pink for hover */
-  border-bottom: 1px dotted #e91e63;
-}
-
-/* Table styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-th, td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #4caf50; /* Green header background */
-  color: white;
-}
-
-/* Colorful button */
-.button {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: #673ab7; /* Purple button */
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #512da8; /* Darker purple on hover */
-}
-
+/* Welcome heading */
 h1.welcome-heading {
-  background: linear-gradient(45deg, #ff4081, #ff8c1a); /* Gradient from pink to orange */
-  color: #fff; /* White text color */
-  padding: 20px; /* Increased padding for better visibility */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   text-align: center;
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px; /* Increased margin for separation */
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
-/* Existing styles... */
-
-/* Updated styles for the index page */
-body {
-  background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
+/* Corner initialization button */
+.init-button-corner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
-.menu-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 50px; /* Adjust the margin based on your layout */
-}
-
-.menu-item {
-  width: 200px;
-  height: 150px;
-  text-align: center;
-  padding: 20px;
-  margin: 15px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.menu-item a {
-  display: block;
-  width: 100%;
-  height: 100%;
+.init-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+  color: white;
   text-decoration: none;
-  color: inherit;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  font-size: 24px;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
-.menu-item:hover {
-  transform: scale(1.05); /* Scale up on hover */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+.init-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+  animation: none;
 }
 
-/* Updated style for the "Students" menu item */
-.menu-item.students {
-  background: #f39c12; /* Orange background for Students */
-  color: #fff;
+@keyframes pulse {
+  0% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
+  50% { box-shadow: 0 4px 25px rgba(255, 107, 107, 0.6); }
+  100% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
 }
 
-.menu-item.students:before {
-  content: "";
+/* Menu container */
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* Menu items */
+.menu-item {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  height: 160px;
+}
+
+.menu-item::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('path/to/your-pattern.png'); /* Replace with your pattern image */
-  opacity: 0.2;
-}
-
-/* Updated styles for the "Courses" menu item */
-.menu-item.courses {
-  background: #e74c3c; /* Red background for Courses */
-  color: #fff;
-}
-
-/* Updated styles for the "Instructors" menu item */
-.menu-item.instructors {
-  background: #2ecc71; /* Green background for Instructors */
-  color: #fff;
-}
-
-/* Your other styles... */
-
-/* Existing styles... */
-
-/* Updated styles for the index page */
-body {
-  background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
-}
-
-.menu-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 50px; /* Adjust the margin based on your layout */
-}
-
-.menu-item {
-  width: 200px;
-  height: 150px;
-  text-align: center;
-  padding: 20px;
-  margin: 15px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.menu-item a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .menu-item:hover {
-  transform: scale(1.05); /* Scale up on hover */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Updated styles for the "Students" menu item */
-.menu-item.students {
-  background: linear-gradient(45deg, #ff6b6b, #ffb74d); /* Gradient background for Students */
-  color: #fff;
-}
-
-/* Updated styles for the "Courses" menu item */
-.menu-item.courses {
-  background: linear-gradient(45deg, #5c6bc0, #9575cd); /* Gradient background for Courses */
-  color: #fff;
-}
-
-/* Updated styles for the "Instructors" menu item */
-.menu-item.instructors {
-  background: linear-gradient(45deg, #66bb6a, #a5d6a7); /* Gradient background for Instructors */
-  color: #fff;
-}
-
-/* Updated styles for the "Sections" menu item */
-.menu-item.sections {
-  background: linear-gradient(45deg, #ec407a, #f48fb1); /* Gradient background for Sections */
-  color: #fff;
-}
-
-/* Your other styles... */
-/* Existing styles... */
-
-/* Updated styles for the index page */
-body {
-  background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
-}
-
-.menu-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 50px; /* Adjust the margin based on your layout */
-}
-
-.menu-item {
-  width: 200px;
-  height: 150px;
-  text-align: center;
-  padding: 20px;
-  margin: 15px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+.menu-item:hover::before {
+  opacity: 0.05;
 }
 
 .menu-item a {
-  display: block;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   text-decoration: none;
-  color: inherit;
+  color: #333;
+  padding: 20px;
 }
 
-.menu-item:hover {
-  transform: scale(1.05); /* Scale up on hover */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+.menu-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
 }
 
-/* Updated styles for the "Students" menu item */
+.menu-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Individual menu item colors */
 .menu-item.students {
-  background: #3498db; /* Blue background for Students */
-  color: #fff;
+  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-/* Updated styles for the "Instructors" menu item */
-.menu-item.instructors {
-  background: #e74c3c; /* Red background for Instructors */
-  color: #fff;
+.menu-item.students a {
+  color: white;
 }
 
-/* Updated styles for the "Courses" menu item */
+.menu-item.students .menu-text {
+  color: white;
+}
+
 .menu-item.courses {
-  background: #2ecc71; /* Green background for Courses */
-  color: #fff;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
 }
 
-/* Updated styles for the "Sections" menu item */
+.menu-item.courses a {
+  color: white;
+}
+
+.menu-item.courses .menu-text {
+  color: white;
+}
+
+.menu-item.instructors {
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+}
+
+.menu-item.instructors a {
+  color: white;
+}
+
+.menu-item.instructors .menu-text {
+  color: white;
+}
+
 .menu-item.sections {
-  background: #f39c12; /* Orange background for Sections */
-  color: #fff;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
 }
 
-/* Your other styles... */
-/* Styles for Course Details */
-.course-details-container {
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-.course-details-header {
-  background-color: #100F0F;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  border-radius: 15px 15px 0 0;
-}
-
-.course-details-content {
-  padding: 20px;
-}
-
-.course-details-content p {
-  margin-bottom: 15px;
-}
-
-/* Your existing styles... */
-
-/* Styles for Section Details */
-.section-details-container {
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-.section-details-header {
-  background-color: #0F100F; /* Red */
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  border-radius: 15px 15px 0 0;
-}
-
-.section-details-content {
-  padding: 20px;
-}
-
-.section-details-content p {
-  margin-bottom: 15px;
+.menu-item.sections a {
   color: #333;
 }
 
-/* Your existing styles... */
+.menu-item.sections .menu-text {
+  color: #333;
+}
 
+/* Typography */
+h1, h2, h3, h4 {
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
 
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Links */
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li a {
+  display: block;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+ul li a:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f8f9fa;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .menu-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .menu-item {
+    height: 140px;
+  }
+  
+  .menu-icon {
+    font-size: 2.5rem;
+  }
+  
+  h1.welcome-heading {
+    font-size: 2rem;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Detail page styles */
+.detail-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.detail-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.detail-content {
+  padding: 30px;
+}
+
+.detail-content p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
