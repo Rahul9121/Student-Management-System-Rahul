@@ -43,7 +43,7 @@ class Enrollment(db.Model):
     student_number = db.Column(db.Integer, db.ForeignKey('students.student_number'))
     section_identifier = db.Column(db.Integer, db.ForeignKey('sections.section_identifier'))
     grade = db.Column(db.String(5))
-    section = db.relationship('Section', back_populates='enrollments')
+    section = db.relationship('Section', back_populates='enrollments', overlaps="related_section")
 
 # Define routes
 @app.route('/')
