@@ -1,0 +1,346 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3e0e0; /* Light pink background */
+  color: #1a1a1a; /* Dark gray text color */
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #ff3d00; /* Vibrant orange */
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 10px 0; /* Slightly larger padding */
+}
+
+a {
+  text-decoration: none;
+  color: #2196f3; /* Bright blue */
+  transition: color 0.3s ease;
+  border-bottom: 1px dotted transparent;
+}
+
+a:hover {
+  color: #e91e63; /* Vibrant pink for hover */
+  border-bottom: 1px dotted #e91e63;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4caf50; /* Green header background */
+  color: white;
+}
+
+/* Colorful button */
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #673ab7; /* Purple button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #512da8; /* Darker purple on hover */
+}
+
+h1.welcome-heading {
+  background: linear-gradient(45deg, #ff4081, #ff8c1a); /* Gradient from pink to orange */
+  color: #fff; /* White text color */
+  padding: 20px; /* Increased padding for better visibility */
+  text-align: center;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; /* Increased margin for separation */
+}
+
+/* Existing styles... */
+
+/* Updated styles for the index page */
+body {
+  background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px; /* Adjust the margin based on your layout */
+}
+
+.menu-item {
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.menu-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+/* Updated style for the "Students" menu item */
+.menu-item.students {
+  background: #f39c12; /* Orange background for Students */
+  color: #fff;
+}
+
+.menu-item.students:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path/to/your-pattern.png'); /* Replace with your pattern image */
+  opacity: 0.2;
+}
+
+/* Updated styles for the "Courses" menu item */
+.menu-item.courses {
+  background: #e74c3c; /* Red background for Courses */
+  color: #fff;
+}
+
+/* Updated styles for the "Instructors" menu item */
+.menu-item.instructors {
+  background: #2ecc71; /* Green background for Instructors */
+  color: #fff;
+}
+
+/* Your other styles... */
+
+/* Existing styles... */
+
+/* Updated styles for the index page */
+body {
+  background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px; /* Adjust the margin based on your layout */
+}
+
+.menu-item {
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.menu-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+/* Updated styles for the "Students" menu item */
+.menu-item.students {
+  background: linear-gradient(45deg, #ff6b6b, #ffb74d); /* Gradient background for Students */
+  color: #fff;
+}
+
+/* Updated styles for the "Courses" menu item */
+.menu-item.courses {
+  background: linear-gradient(45deg, #5c6bc0, #9575cd); /* Gradient background for Courses */
+  color: #fff;
+}
+
+/* Updated styles for the "Instructors" menu item */
+.menu-item.instructors {
+  background: linear-gradient(45deg, #66bb6a, #a5d6a7); /* Gradient background for Instructors */
+  color: #fff;
+}
+
+/* Updated styles for the "Sections" menu item */
+.menu-item.sections {
+  background: linear-gradient(45deg, #ec407a, #f48fb1); /* Gradient background for Sections */
+  color: #fff;
+}
+
+/* Your other styles... */
+/* Existing styles... */
+
+/* Updated styles for the index page */
+body {
+  background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px; /* Adjust the margin based on your layout */
+}
+
+.menu-item {
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.menu-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+/* Updated styles for the "Students" menu item */
+.menu-item.students {
+  background: #3498db; /* Blue background for Students */
+  color: #fff;
+}
+
+/* Updated styles for the "Instructors" menu item */
+.menu-item.instructors {
+  background: #e74c3c; /* Red background for Instructors */
+  color: #fff;
+}
+
+/* Updated styles for the "Courses" menu item */
+.menu-item.courses {
+  background: #2ecc71; /* Green background for Courses */
+  color: #fff;
+}
+
+/* Updated styles for the "Sections" menu item */
+.menu-item.sections {
+  background: #f39c12; /* Orange background for Sections */
+  color: #fff;
+}
+
+/* Your other styles... */
+/* Styles for Course Details */
+.course-details-container {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-details-header {
+  background-color: #100F0F;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px 15px 0 0;
+}
+
+.course-details-content {
+  padding: 20px;
+}
+
+.course-details-content p {
+  margin-bottom: 15px;
+}
+
+/* Your existing styles... */
+
+/* Styles for Section Details */
+.section-details-container {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-details-header {
+  background-color: #0F100F; /* Red */
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px 15px 0 0;
+}
+
+.section-details-content {
+  padding: 20px;
+}
+
+.section-details-content p {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Your existing styles... */
+
+

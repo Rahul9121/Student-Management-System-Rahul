@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="section-details-container">
+    <div class="section-details-header">
+      <h1>{{ section.section_name }}</h1>
+    </div>
+    <div class="section-details-content">
+      <p>Section ID: {{ section.section_identifier }}</p>
+      <p>Course Number: {{ section.course_number }}</p>
+      <p>Instructor Name: {{ section.instructor_name }}</p>
+      <p>Semester: {{ section.semester }}</p>
+      <!-- Add more details if required -->
+    </div>
+  </div>
+{% endblock %}

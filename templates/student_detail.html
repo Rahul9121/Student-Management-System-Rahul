@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ student.name }}</h1>
+<p>Student Number: {{ student.student_number }}</p>
+<p>Date of Birth: {{ student.dob }}</p>
+
+<h3>Enrolled Courses:</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Course Name</th>
+      <th>Course Number</th>
+      <th>Section Identifier</th>
+      <th>Instructor</th>
+      <th>Credit Hours</th>
+      <th>Semester</th>
+      <th>Year</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for enrollment in enrollments %}
+    <tr>
+      <td>{{ enrollment.related_section.course.course_name }}</td>
+      <td>{{ enrollment.related_section.course_number }}</td>
+      <td>{{ enrollment.section_identifier }}</td>
+      <td>{{ enrollment.related_section.instructor_name }}</td>
+
+      <td>{{ enrollment.related_section.course.credit_hours }}</td>
+      <td>{{ enrollment.related_section.semester }}</td>
+      <td>{{ enrollment.related_section.year }}</td>
+      <td>{{ enrollment.grade }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

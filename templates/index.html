@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <h1 class="welcome-heading">Welcome to the Student Management System</h1>
+  <div class="menu-container">
+    <div class="menu-item"><a href="{{ url_for('students_all') }}">Students</a></div>
+    <div class="menu-item"><a href="{{ url_for('courses_all') }}">Courses</a></div>
+    <div class="menu-item"><a href="{{ url_for('instructors_all') }}">Instructors</a></div>
+    <div class="menu-item"><a href="{{ url_for('sections_all') }}">Sections</a></div>
+  </div>
+{% endblock %}
+
+
+
